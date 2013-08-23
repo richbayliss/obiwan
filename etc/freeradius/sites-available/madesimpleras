@@ -1,0 +1,31 @@
+authorize {
+  sql
+}
+authenticate {
+	Auth-Type PAP {
+			pap
+	}
+	Auth-Type CHAP {
+			chap
+	}
+	Auth-Type MS-CHAP {
+			mschap
+	}
+}
+preacct {
+}
+accounting {
+  sql
+  sqlippool
+}
+session {
+  sql
+}
+post-auth {
+  sql
+  sqlippool
+}
+pre-proxy {
+}
+post-proxy {
+}

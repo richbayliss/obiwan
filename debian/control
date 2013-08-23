@@ -1,0 +1,11 @@
+Source: obiwan
+Section: net
+Standards-Version: 3.9.1
+Priority: optional
+Maintainer: Rich Bayliss <richbayliss+ubuntu@gmail.com>
+Bzr-Vcs: lp:obiwan
+
+Package: obiwan
+Architecture: all
+Depends: debconf, bash, iptables, vlan, bridge-utils, dnsmasq, libradiusclient-ng2, freeradius, freeradius-mysql, mysql-common, mysql-client, mysql-server, xsltproc, xmlstarlet, pppoe
+Description: Builds a Broadband RAS

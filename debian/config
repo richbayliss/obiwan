@@ -1,0 +1,57 @@
+#!/bin/sh
+set -e
+
+. /usr/share/debconf/confmodule         
+
+db_version 2.0
+db_title "MadeSimpleRAS Setup" 
+db_capb backup
+
+INTF=$(ip link | grep BROADCAST | awk '{split($2,a,"@"); print a[1]}' | sed s/://g | tr '\n' ',' | sed 's/,/,\ /g' | awk '{print substr($0,0,length()-1)}')
+db_subst madesimpleras/intfSelect interfaces $INTF
+
+STATE=1
+while [ true ]; do
+	case $STATE in
+	1)
+		db_input high madesimpleras/mysqlRootPassword || true
+	;;
+	2)
+		db_input high madesimpleras/intfSelect || true
+	;;
+	3)
+		db_input high madesimpleras/intfModeSelect || true
+	;;
+	4)
+		db_beginblock
+		db_input high madesimpleras/intfStaticAddress || true
+		db_input high madesimpleras/intfStaticNetmask || true
+		db_input high madesimpleras/intfStaticGateway || true
+		
+		db_endblock
+	;;
+	*)
+		break;
+	;;
+	
+	esac
+	
+	if db_go; then
+		
+		if [ $STATE -eq 3 ]; then
+			db_get madesimpleras/intfModeSelect
+			
+			[ "$RET" = "DHCP" ] && STATE=$(($STATE + 1))
+		fi
+		
+		STATE=$(($STATE + 1))
+	else
+		STATE=$(($STATE - 1))
+	fi
+done
+
+if [ $STATE -eq 0 ]; then
+	exit 10
+fi
+
+

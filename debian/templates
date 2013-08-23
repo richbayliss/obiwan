@@ -1,0 +1,28 @@
+Template: madesimpleras/mysqlRootPassword
+Type: password
+Description: Please enter the MySQL root user password. This is so we can configure the FreeRADIUS server database backend.
+
+Template: madesimpleras/intfSelect
+Type: select
+Choices: ${interfaces}
+Description: Choose your WAN interface
+
+Template: madesimpleras/intfModeSelect
+Type: select
+Choices: DHCP, Static
+Default: DHCP
+Description: Would you like to use DHCP or Static IP?
+
+Template: madesimpleras/intfStaticAddress
+Type: string
+Description: IP Address
+
+Template: madesimpleras/intfStaticNetmask
+Type: string
+Default: 255.255.255.0
+Description: NetMask
+
+Template: madesimpleras/intfStaticGateway
+Type: string
+Description: Default Gateway
+

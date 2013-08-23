@@ -1,0 +1,11 @@
+# PPP options for the PPPoE Server
+# -- Installed by MadeSimpleRAS
+require-chap
+lcp-echo-interval 10
+lcp-echo-failure 5
+plugin radius.so
+plugin radattr.so
+radius-config-file /etc/ppp/radiusclient/radiusclient.conf
+debug
+kdebug 1
+
