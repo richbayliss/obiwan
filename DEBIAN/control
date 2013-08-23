@@ -1,0 +1,10 @@
+Package: Obiwan
+Version: 0.1.0
+Section: base
+Priority: optional
+Architecture: all
+Depends: debconf, bash, iptables, vlan, bridge-utils, dnsmasq, libradiusclient-ng2, freeradius, freeradius-mysql, mysql-common, mysql-client, mysql-server, xsltproc, xmlstarlet, pppoe
+Maintainer: richbayliss@gmail.com
+Description: Builds a Broadband RAS
+
+
