@@ -7,9 +7,9 @@ set -e
 service pppoe stop || true
 
 # tidy up FreeRADIUS
-if [ -e /etc/freeradius/sites-enabled/madesimpleras ]
+if [ -e /etc/freeradius/sites-enabled/obiwan ]
 then
-	rm -f /etc/freeradius/sites-enabled/madesimpleras || true
+	rm -f /etc/freeradius/sites-enabled/obiwan || true
 fi
 
 # add back the old default config

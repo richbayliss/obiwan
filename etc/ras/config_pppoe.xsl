@@ -8,7 +8,7 @@
   <!-- config entry point -->
   <xsl:template match="/"># /etc/init/pppoe.conf
 
-description "Mini-RAS PPPoE Server"
+description "Obiwan PPPoE Server"
 author      "Rich Bayliss"
 
 <xsl:apply-templates select="config/services" />

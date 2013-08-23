@@ -1,5 +1,5 @@
 # PPP options for the PPPoE Server
-# -- Installed by MadeSimpleRAS
+# -- Installed by Obiwan
 require-chap
 lcp-echo-interval 10
 lcp-echo-failure 5
