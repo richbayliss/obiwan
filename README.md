@@ -10,3 +10,14 @@ Close real-world emulation (use RADIUS for PPP attributes etc)
 Building
 =====
 The source tree will provide the folder structure to perform a package build on Ubuntu.
+
+/home  
+/home/obiwan  
+/home/obiwan/etc  
+/home/obiwan/DEBIAN  
+
+in `/home` run `dpkg --build obiwan` to build the package.
+
+Installing
+=====
+Install as `dpkg -i obiwan.deb`. If you face dependancy issues run `apt-get install -f`
