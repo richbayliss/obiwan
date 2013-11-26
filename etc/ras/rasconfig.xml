@@ -1,7 +1,16 @@
 <?xml version="1.0" encoding="windows-1250"?>
 <config>
   <interfaces />
-  <services />
+  <services>
+    <!--
+    <pppoe-server>
+      <local>10.11.1.1</local>
+      <remote count="30">10.11.1.33</remote>
+      <mtu>1452</mtu>
+      <interface>...</interface>
+    </pppoe-server>
+    -->
+  </services>
   <firewall />
   <system />
 </config>
